@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "review_valonteers",
+  "info": {
+    "singularName": "review-valonteer",
+    "pluralName": "review-valonteers",
+    "displayName": "review-valonteer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "volunteer_profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::volunteer-profile.volunteer-profile",
+      "inversedBy": "review_valonteers"
+    }
+  }
+}

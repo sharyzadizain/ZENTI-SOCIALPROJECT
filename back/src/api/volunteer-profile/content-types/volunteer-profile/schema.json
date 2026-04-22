@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volunteer_profiles",
+  "info": {
+    "singularName": "volunteer-profile",
+    "pluralName": "volunteer-profiles",
+    "displayName": "volunteer-profile"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "volunteer_profile"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "emailDisplay": {
+      "type": "email"
+    },
+    "gosuslugiVerified": {
+      "type": "boolean",
+      "default": false
+    },
+    "soundEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "deedsCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "totalHours": {
+      "type": "decimal",
+      "default": 0
+    },
+    "peopleNeedHelp": {
+      "type": "integer",
+      "default": 500
+    },
+    "quoteText": {
+      "type": "text"
+    },
+    "volunteer_achievement_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::volunteer-achievement-progress.volunteer-achievement-progress",
+      "mappedBy": "volunteer_profile"
+    },
+    "review_valonteers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review-valonteer.review-valonteer",
+      "mappedBy": "volunteer_profile"
+    }
+  }
+}

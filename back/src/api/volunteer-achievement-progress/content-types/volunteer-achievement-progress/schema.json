@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volunteer_achievement_progresses",
+  "info": {
+    "singularName": "volunteer-achievement-progress",
+    "pluralName": "volunteer-achievement-progresses",
+    "displayName": "volunteer-achievement-progress"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "achievedAt": {
+      "type": "date"
+    },
+    "progressCurrent": {
+      "type": "integer",
+      "default": 0
+    },
+    "volunteer_profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::volunteer-profile.volunteer-profile",
+      "inversedBy": "volunteer_achievement_progresses"
+    },
+    "volunteer_achievement": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::volunteer-achievement.volunteer-achievement",
+      "inversedBy": "volunteer_achievement_progresses"
+    }
+  }
+}

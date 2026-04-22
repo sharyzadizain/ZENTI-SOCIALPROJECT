@@ -1,0 +1,61 @@
+.git
+.gitignore
+.dockerignore
+
+# Local env and editor files
+**/.env
+**/.env.*
+!**/.env.example
+**/.DS_Store
+**/.AppleDouble
+**/.LSOverride
+**/Thumbs.db
+**/Desktop.ini
+**/.idea
+**/.vscode
+**/.zed
+**/.claude
+
+# Dependencies and caches
+**/node_modules
+**/.npm
+**/.yarn
+**/.pnp.*
+**/.cache
+**/.eslintcache
+**/.tsbuildinfo
+
+# Build output
+**/.nuxt
+**/.nitro
+**/.output
+**/dist
+**/build
+**/.strapi
+**/.strapi-updater.json
+**/.strapi-cloud.json
+
+# Runtime data
+**/.tmp
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/public/uploads/*
+!**/public/uploads/.gitkeep
+
+# Native/mobile build output
+**/.cargo
+**/src-tauri/target
+
+# Logs and archives
+**/*.log
+**/*.log.*
+**/logs
+**/*.zip
+**/*.tar
+**/*.tar.gz
+**/*.tgz
+**/*.rar
+**/*.7z
+
+agents.md

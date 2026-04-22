@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volunteer_achievements",
+  "info": {
+    "singularName": "volunteer-achievement",
+    "pluralName": "volunteer-achievements",
+    "displayName": "volunteer-achievement"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "progressTarget": {
+      "type": "integer",
+      "default": 1
+    },
+    "progressUnit": {
+      "type": "string",
+      "default": "звонков"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "volunteer_achievement_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::volunteer-achievement-progress.volunteer-achievement-progress",
+      "mappedBy": "volunteer_achievement"
+    }
+  }
+}

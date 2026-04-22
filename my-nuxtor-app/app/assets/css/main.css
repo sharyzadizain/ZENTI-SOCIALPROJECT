@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "HelveticaCustom";
+	src: url("/fonts/helvetica_light.otf") format("opentype");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HelveticaCustom";
+	src: url("/fonts/helvetica_lightoblique.otf") format("opentype");
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HelveticaCustom";
+	src: url("/fonts/helvetica_regular.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HelveticaCustom";
+	src: url("/fonts/helvetica_cyr_oblique.ttf") format("truetype"),
+		url("/fonts/helvetica_oblique.otf") format("opentype");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HelveticaCustom";
+	src: url("/fonts/helvetica_bold.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HelveticaCustom";
+	src: url("/fonts/helvetica_cyr_boldoblique.ttf") format("truetype"),
+		url("/fonts/helvetica_boldoblique.otf") format("opentype");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+html,
+body,
+#__nuxt {
+	margin: 0;
+	min-height: 100%;
+	font-family: "HelveticaCustom", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #0f172a;
+	background-color: #f2f3f5;
+}
+
+* {
+	box-sizing: border-box;
+}

@@ -1,0 +1,99 @@
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+**/node_modules/
+.pnp.*
+
+# Package manager noise
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Logs and reports
+logs/
+*.log
+*.pid
+coverage/
+lcov.info
+results/
+
+# Build output and caches
+dist/
+build/
+.cache/
+.nuxt/
+.nitro/
+.output/
+.strapi/
+.strapi-updater.json
+.strapi-cloud.json
+.eslintcache
+.tsbuildinfo
+
+# Runtime data
+.tmp/
+**/.tmp/
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+exports/
+license.txt
+
+# Uploaded/generated media
+**/public/uploads/*
+!**/public/uploads/.gitkeep
+
+# IDE and local tooling
+.idea/
+.zed/
+.claude/
+.cargo/
+src-tauri/target/
+**/src-tauri/target/
+
+# Archives and binaries
+*.7z
+*.csv
+*.dat
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.swo
+*.swp
+*.swn
+*.swm
+*.out
