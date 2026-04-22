@@ -1,28 +1,47 @@
 services:
-  app:
+  back:
     build:
-      context: .
+      context: ./back
       dockerfile: Dockerfile
-    image: zenti-socialproject:local
-    container_name: zenti-socialproject
+    image: zenti-back:local
+    container_name: zenti-back
     restart: unless-stopped
     env_file:
       - ./back/.env.crash
-      - ./my-nuxtor-app/.env.crash
     environment:
       HOST: 0.0.0.0
       PORT: 1337
-      NITRO_HOST: 0.0.0.0
-      NITRO_PORT: 3000
       DATABASE_CLIENT: sqlite
       DATABASE_FILENAME: .tmp/data.db
-      NUXT_BACK_SQLITE_PATH: /app/back/.tmp/data.db
     ports:
       - "${BACKEND_PORT:-1337}:1337"
+    volumes:
+      - strapi-db:/app/.tmp
+      - strapi-uploads:/app/public/uploads
+
+  frontend:
+    build:
+      context: ./my-nuxtor-app
+      dockerfile: Dockerfile
+      args:
+        NUXT_PUBLIC_STRAPI_URL: ${NUXT_PUBLIC_STRAPI_URL:-http://localhost:1337}
+    image: zenti-frontend:local
+    container_name: zenti-frontend
+    restart: unless-stopped
+    depends_on:
+      back:
+        condition: service_healthy
+    env_file:
+      - ./my-nuxtor-app/.env.crash
+    environment:
+      NITRO_HOST: 0.0.0.0
+      NITRO_PORT: 3000
+      NUXT_PUBLIC_STRAPI_URL: ${NUXT_PUBLIC_STRAPI_URL:-http://localhost:1337}
+      NUXT_BACK_SQLITE_PATH: /app/back/.tmp/data.db
+    ports:
       - "${FRONTEND_PORT:-3000}:3000"
     volumes:
       - strapi-db:/app/back/.tmp
-      - strapi-uploads:/app/back/public/uploads
 
 volumes:
   strapi-db:
